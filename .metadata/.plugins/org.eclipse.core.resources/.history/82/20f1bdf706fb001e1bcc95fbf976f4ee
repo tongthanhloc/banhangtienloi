@@ -1,0 +1,17 @@
+package gui;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+
+public class GUI_KhoHang extends JFrame{
+	public GUI_KhoHang() {
+		setTitle("Kho Hàng");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0,0,1920,1080);
+		setLocationRelativeTo(null);
+		setResizable(true);
+		setLayout(new BorderLayout());
+		
+	}
+}

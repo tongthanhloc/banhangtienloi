@@ -1,0 +1,55 @@
+package gui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class GUI_KhoHang extends JFrame{
+	public GUI_KhoHang() {
+		setTitle("Kho Hàng");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0,0,1920,1080);
+		setLocationRelativeTo(null);
+		setResizable(true);
+		setLayout(new BorderLayout());
+		
+		JPanel pNorth = new JPanel();
+		Box bNorth = Box.createHorizontalBox();
+		
+		JButton btnBanHang = new JButton("Bán Hàng");
+		btnBanHang.setBounds(1099, 22, 310, 85);
+		bNorth.add(btnBanHang);
+		btnBanHang.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnBanHang.setBackground(Color.getHSBColor(94, 84, 95));
+		
+//		JButton btnBanHang = new JButton("Bán Hàng");
+//		btnBanHang.setBounds(1099, 22, 310, 85);
+//		bNorth.add(btnBanHang);
+//		btnBanHang.setFont(new Font("Tahoma", Font.PLAIN, 30));
+//		btnBanHang.setBackground(Color.getHSBColor(94, 84, 95));
+//		
+//		JButton btnBanHang = new JButton("Bán Hàng");
+//		btnBanHang.setBounds(1099, 22, 310, 85);
+//		bNorth.add(btnBanHang);
+//		btnBanHang.setFont(new Font("Tahoma", Font.PLAIN, 30));
+//		btnBanHang.setBackground(Color.getHSBColor(94, 84, 95));
+//		
+//		JButton btnBanHang = new JButton("Bán Hàng");
+//		btnBanHang.setBounds(1099, 22, 310, 85);
+//		bNorth.add(btnBanHang);
+//		btnBanHang.setFont(new Font("Tahoma", Font.PLAIN, 30));
+//		btnBanHang.setBackground(Color.getHSBColor(94, 84, 95));
+		
+		pNorth.add(bNorth);
+		this.add(pNorth,BorderLayout.NORTH);
+	}
+	
+	public static void main(String[] args) {
+		new GUI_KhoHang().setVisible(true);
+	}
+}

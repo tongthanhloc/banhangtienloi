@@ -18,9 +18,11 @@ public class GUI_BanHang extends JFrame{
 	private JPanel Frame;
 	private JTextField txtSDT;
 	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField txtTienKH;
 	private JTable tableHD;
 	private JComboBox cbLoaiKH;
+	private JTextField textField;
+	private DefaultTableModel modelHD;
 
 
 
@@ -40,11 +42,11 @@ public class GUI_BanHang extends JFrame{
 	                    // Đặt cửa sổ không có viền và không thể điều chỉnh kích thước
 	                    frame.setUndecorated(true);
 
-	                    // Tạo một đối tượng GUI_Ban và hiển thị nó
-	                    GUI_Ban gui = new GUI_Ban();
+	                    // Tạo một đối tượng GUI_BanHang và hiển thị nó
+	                    GUI_BanHang gui = new GUI_BanHang();
 	                    gui.setVisible(true);
 
-	                    // Thêm GUI_Ban vào frame
+	                    // Thêm GUI_BanHang vào frame
 	                    frame.getContentPane().add(gui);
 
 	                    // Hiển thị frame
@@ -58,7 +60,7 @@ public class GUI_BanHang extends JFrame{
 	/**
 	 * Create the frame.
 	 */
-	public GUI_Ban() {
+	public GUI_BanHang() {
 	
 		setTitle("Quản lý khách sạn");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -140,117 +142,117 @@ public class GUI_BanHang extends JFrame{
 		lblNewLabel.setBounds(40, 150, 245, 50);
 		pCenterRight.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("000.000.000");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(285, 150, 245, 50);
-		pCenterRight.add(lblNewLabel_1);
+		JLabel lblTongTien = new JLabel("000.000.000");
+		lblTongTien.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblTongTien.setBounds(285, 150, 245, 50);
+		pCenterRight.add(lblTongTien);
 		
 		JLabel lblGimGi = new JLabel("Giảm giá");
 		lblGimGi.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblGimGi.setBounds(40, 210, 245, 50);
 		pCenterRight.add(lblGimGi);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("00%");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_1.setBounds(285, 210, 245, 50);
-		pCenterRight.add(lblNewLabel_1_1);
+		JLabel lblKhuyenmai = new JLabel("00%");
+		lblKhuyenmai.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblKhuyenmai.setBounds(285, 210, 245, 50);
+		pCenterRight.add(lblKhuyenmai);
 		
 		JLabel lblTinKhcha = new JLabel("Tiền khách đưa");
 		lblTinKhcha.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTinKhcha.setBounds(40, 270, 245, 50);
 		pCenterRight.add(lblTinKhcha);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		textField_2.setColumns(10);
-		textField_2.setBounds(285, 275, 210, 50);
-		pCenterRight.add(textField_2);
+		txtTienKH = new JTextField();
+		txtTienKH.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		txtTienKH.setColumns(10);
+		txtTienKH.setBounds(285, 275, 210, 50);
+		pCenterRight.add(txtTienKH);
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setBounds(505, 275, 53, 50);
 		pCenterRight.add(btnNewButton);
 		
-		JButton btnNewButton_1_1_1_1_1_1 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1.setBounds(430, 390, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1);
+		JButton btnTien8 = new JButton("1.000.000");
+		btnTien8.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien8.setBounds(430, 390, 123, 50);
+		pCenterRight.add(btnTien8);
 		
-		JButton btnNewButton_1_1_1_1_1_1_1 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1_1.setBounds(290, 390, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1_1);
+		JButton btnTien7 = new JButton("1.000.000");
+		btnTien7.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien7.setBounds(290, 390, 123, 50);
+		pCenterRight.add(btnTien7);
 		
-		JButton btnNewButton_1_1_1_1_1_1_2 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1_2.setBounds(150, 390, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1_2);
+		JButton btnTien6 = new JButton("1.000.000");
+		btnTien6.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien6.setBounds(150, 390, 123, 50);
+		pCenterRight.add(btnTien6);
 		
-		JButton btnNewButton_1_1_1_1_1_1_3 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1_3.setBounds(10, 390, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1_3);
+		JButton btnTien5 = new JButton("1.000.000");
+		btnTien5.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien5.setBounds(10, 390, 123, 50);
+		pCenterRight.add(btnTien5);
 		
-		JButton btnNewButton_1_1_1_1_1_1_4 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1_4.setBounds(10, 330, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1_4);
+		JButton btnTien1 = new JButton("1.000.000");
+		btnTien1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien1.setBounds(10, 330, 123, 50);
+		pCenterRight.add(btnTien1);
 		
-		JButton btnNewButton_1_1_1_1_1_1_4_1 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1_4_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1_4_1.setBounds(150, 330, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1_4_1);
+		JButton btnTien2 = new JButton("1.000.000");
+		btnTien2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien2.setBounds(150, 330, 123, 50);
+		pCenterRight.add(btnTien2);
 		
-		JButton btnNewButton_1_1_1_1_1_1_4_1_1 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1_4_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1_4_1_1.setBounds(290, 330, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1_4_1_1);
+		JButton btnTien3 = new JButton("1.000.000");
+		btnTien3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien3.setBounds(290, 330, 123, 50);
+		pCenterRight.add(btnTien3);
 		
-		JButton btnNewButton_1_1_1_1_1_1_4_1_1_1 = new JButton("1.000.000");
-		btnNewButton_1_1_1_1_1_1_4_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1_1_1_1_1_1_4_1_1_1.setBounds(430, 330, 123, 50);
-		pCenterRight.add(btnNewButton_1_1_1_1_1_1_4_1_1_1);
+		JButton btnTien4 = new JButton("1.000.000");
+		btnTien4.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTien4.setBounds(430, 330, 123, 50);
+		pCenterRight.add(btnTien4);
 		
 		JLabel lblTinThi = new JLabel("Tiền thối");
 		lblTinThi.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblTinThi.setBounds(40, 461, 245, 50);
 		pCenterRight.add(lblTinThi);
 		
-		JLabel lblTinThi_1 = new JLabel("000.000.000");
-		lblTinThi_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblTinThi_1.setBounds(285, 461, 245, 50);
-		pCenterRight.add(lblTinThi_1);
+		JLabel lblTienThoi = new JLabel("000.000.000");
+		lblTienThoi.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblTienThoi.setBounds(285, 461, 245, 50);
+		pCenterRight.add(lblTienThoi);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 521, 547, 2);
 		pCenterRight.add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnKho_1 = new JButton("Lưu tạm");
-		btnKho_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnKho_1.setBounds(10, 530, 175, 124);
-		pCenterRight.add(btnKho_1);
+		JButton btnLuutam = new JButton("Lưu tạm");
+		btnLuutam.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		btnLuutam.setBounds(10, 530, 175, 124);
+		pCenterRight.add(btnLuutam);
 		
-		JButton btnKho_1_1 = new JButton("Thanh Toán");
-		btnKho_1_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnKho_1_1.setBounds(10, 737, 560, 75);
-		pCenterRight.add(btnKho_1_1);
+		JButton btnThanToan = new JButton("Thanh Toán");
+		btnThanToan.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnThanToan.setBounds(10, 737, 543, 75);
+		pCenterRight.add(btnThanToan);
 		
-		JButton btnKho_1_1_1 = new JButton("Xữ lí hóa đơn lưu tạm");
-		btnKho_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnKho_1_1_1.setBounds(10, 657, 560, 75);
-		pCenterRight.add(btnKho_1_1_1);
+		JButton btnXLDT = new JButton("Xữ lí hóa đơn lưu tạm");
+		btnXLDT.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnXLDT.setBounds(10, 657, 543, 75);
+		pCenterRight.add(btnXLDT);
 
 		panel_1.setBorder(border1);
 		
-		JButton btnKho_1_2 = new JButton("Hủy phiếu");
-		btnKho_1_2.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnKho_1_2.setBounds(195, 530, 175, 124);
-		pCenterRight.add(btnKho_1_2);
+		JButton btnHuyPhieu = new JButton("Hủy phiếu");
+		btnHuyPhieu.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		btnHuyPhieu.setBounds(195, 530, 175, 124);
+		pCenterRight.add(btnHuyPhieu);
 		
-		JButton btnKho_1_3 = new JButton("Kết toán");
-		btnKho_1_3.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnKho_1_3.setBounds(380, 530, 175, 124);
-		pCenterRight.add(btnKho_1_3);
+		JButton btnKetToan = new JButton("Kết toán");
+		btnKetToan.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		btnKetToan.setBounds(380, 530, 175, 124);
+		pCenterRight.add(btnKetToan);
 		
 		JPanel pCenterLetf = new JPanel();
 		pCenterLetf.setBounds(10, 141, 1315, 825);
@@ -258,15 +260,15 @@ public class GUI_BanHang extends JFrame{
 		pCenterLetf.setBorder(border2);
 		pCenterLetf.setLayout(null);
 		String[] cols = new String[] {"STT", "Mã sản phẩm", "Tên sản phẩm", "Gía ", "Số lượng", "Tổng tiền"};
-        String[] cols1 = new String[] {"1", "N001", "Nước suối", "7.000 ", "2", "14.000"};
+       
         
-        DefaultTableModel modelHD = new DefaultTableModel(cols, 0);
-        modelHD.addRow(cols1);
+        modelHD = new DefaultTableModel(cols, 0);
+        modelHD.addRow(new Object[] {1, "SP001", "Sản phẩm 1", 100000, 100000});
 	
 		pCenterLetf.setLayout(null);
 		JTable tableHD = new JTable(modelHD);
 		JScrollPane paneNV = new JScrollPane(tableHD);
-		paneNV.setBounds(10, 10, 1295, 805);
+		paneNV.setBounds(10, 77, 1295, 738);
 		pCenterLetf.add(paneNV);
 	
 		JTableHeader headers = tableHD.getTableHeader();
@@ -280,6 +282,15 @@ public class GUI_BanHang extends JFrame{
 		tableHD.setDefaultRenderer(Object.class, centerRenderer);
         int rowHeight = 30; // Chiều cao mong muốn cho mỗi hàng
         tableHD.setRowHeight(rowHeight);
+        
+        textField = new JTextField();
+        textField.setBounds(40, 20, 305, 39);
+        pCenterLetf.add(textField);
+        textField.setColumns(10);
+        
+        JButton btnNewButton_1 = new JButton("Them");
+        btnNewButton_1.setBounds(369, 20, 96, 39);
+        pCenterLetf.add(btnNewButton_1);
 }
 	private class JTextFieldWithPlaceholder extends JTextField implements FocusListener {
         private String placeholder;
@@ -313,7 +324,7 @@ public class GUI_BanHang extends JFrame{
                 repaint();
             }
         }
-
+        
         @Override
         public void focusLost(FocusEvent e) {
             if (getText().isEmpty()) {
@@ -322,4 +333,32 @@ public class GUI_BanHang extends JFrame{
             }
         }
     }
+	private class QuantityCellEditor extends DefaultCellEditor {
+        private JButton button;
+        private int quantity;
+
+        public QuantityCellEditor() {
+            super(new JTextField());
+            button = new JButton("+");
+            button.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    // Tăng số lượng khi nút '+' được nhấn
+                    quantity++;
+                    fireEditingStopped();
+                }
+            });
+        }
+
+        public Component getTableCellEditorComponent(JTable table, Object value,
+                                                     boolean isSelected, int row, int column) {
+            quantity = (Integer) value;
+            return button;
+        }
+
+        public Object getCellEditorValue() {
+            return quantity;
+        }
+    }
+
+    
 }
