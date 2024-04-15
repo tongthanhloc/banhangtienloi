@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -12,7 +12,7 @@ import java.awt.event.*;
 
 
 
-public class GUI_Ban extends JFrame{
+public class GUI_BanHang extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel Frame;
